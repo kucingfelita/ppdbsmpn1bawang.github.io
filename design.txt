@@ -1,0 +1,68 @@
+1. Struktur Database (Database: ppdbonline)
+•	Tabel calon_siswa
+Berisi data pendaftar (nomor pendaftaran, nama lengkap, NISN, alamat, sekolah asal, jalur pendaftaran, nilai rapor, prestasi lomba, nomor KIP, status diterima/ditolak, ranking, dll).
+•	Tabel admin
+Untuk menyimpan akun login admin (username, password, role).
+•	Tabel pengumuman
+Untuk menampilkan hasil seleksi berdasarkan nomor pendaftaran.
+•	Tabel jurnal_pendaftar
+Menyimpan data hasil perankingan nilai rapor atau jalur prestasi.
+________________________________________
+2. Halaman Frontend (Untuk Calon Siswa)
+1.	Beranda
+o	Informasi singkat tentang PPDB SMPN 1 Bawang.
+o	Tata cara pendaftaran dan syarat-syarat.
+o	Jadwal penting (pendaftaran, seleksi, pengumuman).
+2.	Formulir Pendaftaran
+o	Input data pribadi: nama lengkap, NISN, TTL, alamat, sekolah asal.
+o	Pilih jalur pendaftaran:
+	Prestasi Akademik → input nilai rapor.
+	Prestasi Non-Akademik → upload sertifikat lomba.
+	Afirmasi → upload bukti KIP.
+o	Upload dokumen pendukung (foto, rapor, KIP, sertifikat).
+o	Setelah submit → sistem memberi nomor pendaftaran otomatis.
+3.	Cek Pengumuman
+o	Input nomor pendaftaran.
+o	Sistem menampilkan status:
+	Diterima (beserta jalur pendaftaran).
+	 Tidak Diterima.
+________________________________________
+3. Halaman Backend (Untuk Admin)
+1.	Dashboard Admin
+o	Statistik jumlah pendaftar per jalur.
+o	Grafik jumlah diterima vs ditolak.
+2.	Kelola Data Pendaftar
+o	Tabel semua pendaftar (bisa dicari & difilter berdasarkan jalur).
+o	Admin bisa ubah status siswa: diterima / ditolak.
+o	Edit data jika ada kesalahan.
+3.	Pengelolaan Jalur Pendaftaran
+o	Jalur Prestasi Akademik → sistem ranking otomatis berdasarkan rata-rata nilai rapor.
+o	Jalur Prestasi Non-Akademik → admin memverifikasi keaslian sertifikat.
+o	Jalur Afirmasi → admin memvalidasi KIP.
+4.	Pengumuman
+o	Admin bisa mengaktifkan tombol “Rilis Pengumuman”.
+o	Setelah itu siswa dapat mengakses pengumuman lewat halaman frontend.
+5.	Jurnal Pendaftar (Ranking)
+o	Menampilkan daftar siswa per jalur pendaftaran berdasarkan peringkat.
+o	Contoh:
+	Ranking 1–10 jalur prestasi akademik.
+	Ranking juara lomba jalur non-akademik.
+	Daftar afirmasi valid berdasarkan bukti KIP.
+o	Jurnal bisa diunduh dalam bentuk PDF/Excel.
+________________________________________
+4. Alur Sistem
+1.	Siswa daftar → dapat nomor pendaftaran.
+2.	Data masuk ke database ppdbonline.
+3.	Admin memverifikasi & memberi status (diterima/ditolak).
+4.	Sistem melakukan perankingan otomatis untuk jalur nilai rapor.
+5.	Admin merilis pengumuman.
+6.	Siswa cek pengumuman dengan nomor pendaftaran.
+________________________________________
+5. Tampilan yang Disarankan
+•	Frontend: tampilan sederhana, warna dominan biru-putih (nuansa pendidikan), responsif untuk HP.
+•	Backend Admin: layout dashboard dengan tabel interaktif, ada filter dan pencarian.
+________________________________________
+ Jadi, sistem ini terdiri dari dua sisi:
+•	Frontend (siswa) → pendaftaran, cek pengumuman.
+•	Backend (admin) → verifikasi, seleksi, pengelolaan, dan pengumuman hasil.
+
